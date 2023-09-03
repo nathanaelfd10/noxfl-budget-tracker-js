@@ -1,16 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
 import ExpenseItem from "./components/ExpenseItem";
+import Card from "./components/Card.js"
+import Expenses from "./components/Expenses"
 
 function App() {
-
-  const date = Date(2023, 8, 27);
 
   const expenses = [
     {
       title: "Caramel Macchiato",
       amount: 2.5,
-      date: date,
+      date: new Date(2023, 8, 27),
     },
     {
       title: "Caffe Latte",
@@ -36,9 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      {expenses.map((expense) => {
-        return <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date}/>;
-      })}
+      <Expenses items={expenses}></Expenses>
     </div>
   );
 }
